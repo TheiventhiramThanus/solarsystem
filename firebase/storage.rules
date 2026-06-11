@@ -1,0 +1,18 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Match any document inside the company directory
+    match /documents/{companyId}/{allPaths=**} {
+      
+      // Helper function: Fetch user record from Firestore
+      function getUserDoc() {
+        return firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data;
+      }
+      
+      // Allow read/write if the user is authenticated and belongs to the company, or is an admin
+      allow read: if request.auth != null && (getUserDoc().companyId == companyId || getUserDoc().role == 'admin');
+      allow write: if request.auth != null && (getUserDoc().companyId == companyId || getUserDoc().role == 'admin');
+    }
+  }
+}

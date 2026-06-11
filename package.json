@@ -1,0 +1,18 @@
+{
+  "name": "uk-solar-sme-toolkit",
+  "version": "1.0.0",
+  "description": "UK Solar SME Compliance Toolkit",
+  "main": "server/src/index.js",
+  "scripts": {
+    "install:client": "npm install --prefix client --legacy-peer-deps",
+    "install:server": "npm install --prefix server --legacy-peer-deps",
+    "install-all": "npm run install:client && npm run install:server",
+    "client": "npm run dev --prefix client",
+    "server": "npm start --prefix server",
+    "dev": "concurrently \"npm run client\" \"npm run server\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
