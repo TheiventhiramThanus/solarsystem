@@ -7,7 +7,7 @@
     "install:client": "npm install --prefix client --legacy-peer-deps",
     "install:server": "npm install --prefix server --legacy-peer-deps",
     "install-all": "npm run install:client && npm run install:server",
-    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
     "server": "npm start --prefix server",
     "dev": "concurrently \"npm run client\" \"npm run server\""
   },

@@ -127,7 +127,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Context Info */}
-            <div className="lg:col-span-7 space-y-5">
+            <div className="lg:col-span-12 space-y-5 text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-primary-500/10 text-primary-600 dark:text-primary-400 text-xs font-semibold uppercase tracking-wider">
                 <Smartphone className="w-3.5 h-3.5" />
                 <span>On-Site Mobile Scanning</span>
@@ -141,7 +141,7 @@ export default function Home() {
               <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                 By affixing a weatherproof QR code inside the customer's inverter cabinet, technicians can instantly scan the tag with their smartphone to pull up compliance checklists, electrical test logs, and equipment warranty details.
               </p>
-              <div className="pt-2">
+              <div className="pt-2 flex justify-center">
                 <Link to="/quick-start" className="btn-secondary flex items-center space-x-2 w-fit">
                   <span>Explore Compliance Process Flow</span>
                   <ArrowRight className="w-4 h-4" />
@@ -149,42 +149,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Simulated Mobile Device with QR code */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="w-72 bg-slate-900 rounded-[3rem] p-4 shadow-2xl border-4 border-slate-800 relative shadow-solar-500/5">
-                {/* Speaker/Camera notch */}
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-4 bg-slate-800 rounded-full z-20"></div>
-                {/* Screen content */}
-                <div className="bg-slate-950 rounded-[2.5rem] p-5 pt-8 overflow-hidden text-center text-white h-[450px] flex flex-col justify-between">
-                  <div className="pt-4">
-                    <span className="text-xxs uppercase tracking-wider text-solar-400 font-bold block mb-1">SolarForce UK Ltd</span>
-                    <span className="text-xs font-bold text-slate-100 block">Inverter Cabinet Portal</span>
-                  </div>
 
-                  {/* Mock QR Code */}
-                  <div className="my-4 bg-white p-4 rounded-2xl mx-auto w-40 h-40 flex items-center justify-center shadow-lg">
-                    {/* Generates a clean mockup vector representing QR Code */}
-                    <div className="grid grid-cols-5 gap-1.5 w-full h-full p-1.5 bg-white">
-                      {[...Array(25)].map((_, i) => (
-                        <div 
-                          key={i} 
-                          className={`rounded-sm ${(i % 3 === 0 || i % 7 === 0 || i === 0 || i === 4 || i === 20 || i === 24) ? "bg-slate-950" : "bg-slate-100"}`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 pb-4">
-                    <span className="block text-[10px] text-slate-400">
-                      Affix this code inside the inverter cabinet.
-                    </span>
-                    <div className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-slate-800 text-[10px] font-semibold text-solar-400 border border-slate-700">
-                      <span>Status: Audited & Active</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
