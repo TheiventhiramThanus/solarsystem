@@ -116,7 +116,7 @@ export default function Footer() {
                   <Phone className="w-4 h-4" />
                 </div>
                 <div className="pt-0.5">
-                  <p className="text-white font-medium text-[15px]">+44 20 4577 2330</p>
+                  <p className="text-white font-medium text-[15px]">+44 7424 373432</p>
                   <p className="text-xs text-slate-400 mt-1">Mon-Fri, 9:00am - 5:00pm GMT</p>
                 </div>
               </div>

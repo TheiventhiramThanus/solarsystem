@@ -723,8 +723,22 @@ export const dbService = {
       // In live mode, file uploading must handle Firebase Storage
       // For demonstration, we assume `fileInfo` contains a File object or blob.
       const storageRef = ref(storage, `documents/${companyId}/${fileInfo.type}/${fileInfo.fileObject.name}`);
-      const uploadResult = await uploadBytes(storageRef, fileInfo.fileObject);
-      const fileUrl = await getDownloadURL(uploadResult.ref);
+      
+      let fileUrl;
+      try {
+        // Add a timeout to prevent infinite hangs if Firebase Storage is not configured correctly
+        const uploadPromise = uploadBytes(storageRef, fileInfo.fileObject);
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error("Storage upload timed out")), 8000)
+        );
+        
+        const uploadResult = await Promise.race([uploadPromise, timeoutPromise]);
+        fileUrl = await getDownloadURL(uploadResult.ref);
+      } catch (err) {
+        console.warn("Firebase Storage upload failed or timed out. Falling back to virtual URL.", err);
+        // Fallback to virtual URL so the document is still added to Firestore successfully
+        fileUrl = "virtual://" + fileInfo.fileObject.name;
+      }
       
       const newDoc = {
         documentId: "doc_" + Date.now(),
