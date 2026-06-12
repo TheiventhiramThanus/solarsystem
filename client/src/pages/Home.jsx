@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   // Stats data
   const stats = [
-    { value: "1.5M+", label: "UK Solar Installations", detail: "Microgeneration systems active across Great Britain" },
+    { value: "500+", label: "UK Solar Installations", detail: "Microgeneration systems active across Great Britain" },
     { value: "MCS 012", label: "Mounting Standards", detail: "Mandatory structural wind/snow load compliance" },
     { value: "BS 7671", label: "Electrical Regulations", detail: "Strict wiring standards (Amendment 2/3)" },
     { value: "28 Days", label: "DNO Notification Limit", detail: "Strict legal deadline for commissioning reports" }
