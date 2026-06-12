@@ -29,16 +29,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Hero Text */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <motion.div 
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-solar-500/10 text-solar-600 dark:text-solar-400 text-xs font-semibold uppercase tracking-wider"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Conference Showcase Edition</span>
-              </motion.div>
+            <div className="lg:col-span-7 space-y-6 text-left max-w-4xl">
+
 
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
@@ -56,7 +48,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+                className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed"
               >
                 Align your microgeneration operations with official UK standards. Automate audit readiness logs, evaluate site risks, verify electrical certification, and download professional compliance reports.
               </motion.p>
@@ -65,7 +57,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
+                className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-4"
               >
                 <Link to="/login" className="w-full sm:w-auto btn-primary flex items-center justify-center space-x-2 shadow-lg shadow-solar-500/20">
                   <span>Enter Dashboard Portal</span>
@@ -76,44 +68,10 @@ export default function Home() {
                 </Link>
               </motion.div>
             </div>
-
-            {/* Hero Graphic / Academic Credit Card */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-5"
-            >
-              <div className="glass-card bg-gradient-to-br from-white/90 to-white/40 dark:from-slate-900/90 dark:to-slate-900/40 relative overflow-hidden group border-solar-500/10 shadow-solar-500/5">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-solar-500/10 rounded-full blur-2xl pointer-events-none"></div>
-
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-slate-900 dark:bg-slate-800 text-white flex items-center justify-center font-bold text-lg shadow-inner">
-                    🎓
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base leading-tight">Jeneevan Jeyarasa</h3>
-                    <span className="block text-xs text-solar-500 font-semibold tracking-wider uppercase">Lead Researcher</span>
-                  </div>
-                </div>
-
-                <div className="space-y-4 border-t border-slate-200/50 dark:border-slate-800/50 pt-4">
-                  <div>
-                    <span className="block text-xxs text-slate-400 dark:text-slate-500 uppercase tracking-widest font-semibold">University Study</span>
-                    <span className="block text-sm font-semibold text-slate-700 dark:text-slate-200">University of Chester</span>
-                  </div>
-                  <div>
-                    <span className="block text-xxs text-slate-400 dark:text-slate-500 uppercase tracking-widest font-semibold">Postgraduate Study</span>
-                    <span className="block text-sm font-semibold text-slate-700 dark:text-slate-200">MSc Engineering Management</span>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-solar-500/5 dark:bg-solar-500/5 border border-solar-500/10">
-                    <p className="text-xs text-slate-600 dark:text-slate-300 italic leading-relaxed">
-                      "A compliance scaffolding dashboard engineered to solve the complex regulatory challenges solar installation SMEs face in the UK market."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            {/* Hero Image */}
+            <div className="lg:col-span-5 flex justify-center items-center">
+              <img src="/home_hero_image.png" alt="Solar panels" className="w-full max-w-md" />
+            </div>
           </div>
         </div>
       </section>
